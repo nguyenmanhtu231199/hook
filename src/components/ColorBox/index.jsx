@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
 import { getNodeText } from '@testing-library/react';
 import './style.scss';
 
