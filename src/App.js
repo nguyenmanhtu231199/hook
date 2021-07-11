@@ -8,6 +8,7 @@ import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import PostFilterForm from './components/PostFilterForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, setTodoList]= useState([
@@ -74,9 +75,12 @@ function handleTodoFormSubmit(formValues){
       title_like:newFilter.searchTerm,
     })
   }
+  const [showClock,setShowClock]=useState(true);
   return (
     <div className="app">
       <h1>anhyeuem</h1>
+      {showClock && <Clock />}
+      <button onClick={()=> setShowClock(false)} >Hide clock</button>
     <PostFilterForm onSubmit={hanleFilterChange}/>
       <PostList posts={postList} />
       <Pagination 
