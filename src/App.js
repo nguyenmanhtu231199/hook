@@ -7,6 +7,7 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
+import PostFilterForm from './components/PostFilterForm';
 
 function App() {
   const [todoList, setTodoList]= useState([
@@ -65,10 +66,18 @@ function handleTodoFormSubmit(formValues){
   newTodoList.push(newTodo);
   setTodoList(newTodoList);
 }
-  
+  function hanleFilterChange(newFilter){
+    console.log('New Filter:',newFilter);
+    setFilters({
+      ...filters,
+      _page:1,
+      title_like:newFilter.searchTerm,
+    })
+  }
   return (
     <div className="app">
       <h1>anhyeuem</h1>
+    <PostFilterForm onSubmit={hanleFilterChange}/>
       <PostList posts={postList} />
       <Pagination 
       pagination={pagination}
