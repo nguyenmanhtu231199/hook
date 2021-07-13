@@ -9,6 +9,8 @@ import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import PostFilterForm from './components/PostFilterForm';
 import Clock from './components/Clock';
+import Clock2 from './components/Clock2';
+import MagicBox from './components/MagicBox';
 
 function App() {
   const [todoList, setTodoList]= useState([
@@ -79,14 +81,17 @@ function handleTodoFormSubmit(formValues){
   return (
     <div className="app">
       <h1>anhyeuem</h1>
-      {showClock && <Clock />}
-      <button onClick={()=> setShowClock(false)} >Hide clock</button>
-    <PostFilterForm onSubmit={hanleFilterChange}/>
-      <PostList posts={postList} />
-      <Pagination 
+      <MagicBox/>
+      {/*{showClock && <Clock />}*/}
+
+      {/*<button onClick={()=> setShowClock(false)} >Hide clock</button>*/}
+      {/*<Clock2/>*/}
+    {/*<PostFilterForm onSubmit={hanleFilterChange}/>
+      <PostList posts={postList} />*/}
+      {/*<Pagination 
       pagination={pagination}
       onPageChange={handlePageChange}
-      />
+      />*/}
     </div>
   );
 }
